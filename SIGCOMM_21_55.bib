@@ -1,0 +1,1749 @@
+@inproceedings{10.1145/3452296.3472912,
+author = {Arun, Venkat and Arashloo, Mina Tahmasbi and Saeed, Ahmed and Alizadeh, Mohammad and Balakrishnan, Hari},
+title = {Toward Formally Verifying Congestion Control Behavior},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472912},
+doi = {10.1145/3452296.3472912},
+abstract = {The diversity of paths on the Internet makes it difficult for designers and operators
+to confidently deploy new congestion control algorithms (CCAs) without extensive real-world
+experiments, but such capabilities are not available to most of the networking community.
+And even when they are available, understanding why a CCA underperforms by trawling
+through massive amounts of statistical data from network connections is challenging.
+The history of congestion control is replete with many examples of surprising and
+unanticipated behaviors unseen in simulation but observed on real-world paths. In
+this paper, we propose initial steps toward modeling and improving our confidence
+in a CCA's behavior. We have developed CCAC, a tool that uses formal verification
+to establish certain properties of CCAs. It is able to prove hypotheses about CCAs
+or generate counterexamples for invalid hypotheses. With CCAC, a designer can not
+only gain greater confidence prior to deployment to avoid unpleasant surprises, but
+can also use the counterexamples to iteratively improvetheir algorithm. We have modeled
+additive-increase/multiplicative-decrease (AIMD), Copa, and BBR with CCAC, and describe
+some surprising results from the exercise.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {1–16},
+numpages = {16},
+keywords = {WAN transport, congestion control, formal verification},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472937,
+author = {Tian, Bingchuan and Gao, Jiaqi and Liu, Mengqi and Zhai, Ennan and Chen, Yanqing and Zhou, Yu and Dai, Li and Yan, Feng and Ma, Mengjing and Tang, Ming and Lu, Jie and Wei, Xionglie and Liu, Hongqiang Harry and Zhang, Ming and Tian, Chen and Yu, Minlan},
+title = {Aquila: A Practically Usable Verification System for Production-Scale Programmable Data Planes},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472937},
+doi = {10.1145/3452296.3472937},
+abstract = {This paper presents Aquila, the first practically usable verification system for Alibaba's
+production-scale programmable data planes. Aquila addresses four challenges in building
+a practically usable verification: (1) specification complexity; (2) verification
+scalability; (3) bug localization; and (4) verifier self validation. Specifically,
+first, Aquila proposes a high-level language that facilitates easy expression of specifications,
+reducing lines of specification codes by tenfold compared to the state-of-the-art.
+Second, Aquila constructs a sequential encoding algorithm to circumvent the exponential
+growth of states associated with the upscaling of data plane programs to production
+level. Third, Aquila adopts an automatic and accurate bug localization approach that
+can narrow down suspects based on reported violations and pinpoint the culprit by
+simulating a fix for each suspect. Fourth and finally, Aquila can perform self validation
+based on refinement proof, which involves the construction of an alternative representation
+and subsequent equivalence checking. To this date, Aquila has been used in the verification
+of our production-scale programmable edge networks for over half a year, and it has
+successfully prevented many potential failures resulting from data plane bugs.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {17–32},
+numpages = {16},
+keywords = {programmable switches, formal methods, P4 verification},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472915,
+author = {Schneider, Tibor and Birkner, R\"{u}diger and Vanbever, Laurent},
+title = {Snowcap: Synthesizing Network-Wide Configuration Updates},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472915},
+doi = {10.1145/3452296.3472915},
+abstract = {Large-scale reconfiguration campaigns tend to be nerve-racking for network operators
+as they can lead to significant network downtimes, decreased performance, and policy
+violations. Unfortunately, existing reconfiguration frameworks often fall short in
+practice as they either only support a small set of reconfiguration scenarios or simply
+do not scale.We address these problems with Snowcap, the first network reconfiguration
+framework which can synthesize configuration updates that comply with arbitrary hard
+and soft specifications, and involve arbitrary routing protocols. Our key contribution
+is an efficient search procedure which leverages counter-examples to efficiently navigate
+the space of configuration updates. Given a reconfiguration ordering which violates
+the desired specifications, our algorithm automatically identifies the problematic
+commands so that it can avoid this particular order in the next iteration.We fully
+implemented Snowcap and extensively evaluated its scalability and effectiveness on
+real-world topologies and typical, large-scale reconfiguration scenarios. Even for
+large topologies, Snowcap finds a valid reconfiguration ordering with minimal side-effects
+(i.e., traffic shifts) within a few seconds at most.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {33–49},
+numpages = {17},
+keywords = {migration, configuration, network analysis},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472929,
+author = {Xu, Qiongwen and Wong, Michael D. and Wagle, Tanvi and Narayana, Srinivas and Sivaraman, Anirudh},
+title = {Synthesizing Safe and Efficient Kernel Extensions for Packet Processing},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472929},
+doi = {10.1145/3452296.3472929},
+abstract = {Extended Berkeley Packet Filter (BPF) has emerged as a powerful method to extend packet-processing
+functionality in the Linux operating system. BPF allows users to write code in high-level
+languages (like C or Rust) and execute them at specific hooks in the kernel, such
+as the network device driver. To ensure safe execution of a user-developed BPF program
+in kernel context, Linux uses an in-kernel static checker. The checker allows a program
+to execute only if it can prove that the program is crash-free, always accesses memory
+within safe bounds, and avoids leaking kernel data.BPF programming is not easy. One,
+even modest-sized BPF programs are deemed too large to analyze and rejected by the
+kernel checker. Two, the kernel checker may incorrectly determine that a BPF program
+exhibits unsafe behaviors. Three, even small performance optimizations to BPF code
+(e.g., 5% gains) must be meticulously hand-crafted by expert developers. Traditional
+optimizing compilers for BPF are often inadequate since the kernel checker's safety
+constraints are incompatible with rule-based optimizations.We present K2, a program-synthesis-based
+compiler that automatically optimizes BPF bytecode with formal correctness and safety
+guarantees. K2 produces code with 6--26% reduced size, 1.36%--55.03% lower average
+packet-processing latency, and 0--4.75% higher throughput (packets per second per
+core) relative to the best clang-compiled program, across benchmarks drawn from Cilium,
+Facebook, and the Linux kernel. K2 incorporates several domain-specific techniques
+to make synthesis practical by accelerating equivalence-checking of BPF programs by
+6 orders of magnitude.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {50–64},
+numpages = {15},
+keywords = {synthesis, endpoint packet processing, stochastic optimization, BPF},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472888,
+author = {Cai, Qizhe and Chaudhary, Shubham and Vuppalapati, Midhul and Hwang, Jaehyun and Agarwal, Rachit},
+title = {Understanding Host Network Stack Overheads},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472888},
+doi = {10.1145/3452296.3472888},
+abstract = {Traditional end-host network stacks are struggling to keep up with rapidly increasing
+datacenter access link bandwidths due to their unsustainable CPU overheads. Motivated
+by this, our community is exploring a multitude of solutions for future network stacks:
+from Linux kernel optimizations to partial hardware offload to clean-slate userspace
+stacks to specialized host network hardware. The design space explored by these solutions
+would benefit from a detailed understanding of CPU inefficiencies in existing network
+stacks.This paper presents measurement and insights for Linux kernel network stack
+performance for 100Gbps access link bandwidths. Our study reveals that such high bandwidth
+links, coupled with relatively stagnant technology trends for other host resources
+(e.g., CPU speeds and capacity, cache sizes, NIC buffer sizes, etc.), mark a fundamental
+shift in host network stack bottlenecks. For instance, we find that a single core
+is no longer able to process packets at line rate, with data copy from kernel to application
+buffers at the receiver becoming the core performance bottleneck. In addition, increase
+in bandwidth-delay products have outpaced the increase in cache sizes, resulting in
+inefficient DMA pipeline between the NIC and the CPU. Finally, we find that traditional
+loosely-coupled design of network stack and CPU schedulers in existing operating systems
+becomes a limiting factor in scaling network stack performance across cores. Based
+on insights from our study, we discuss implications to design of future operating
+systems, network protocols, and host hardware.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {65–77},
+numpages = {13},
+keywords = {host network stacks, network hardware, datacenter networks},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472909,
+author = {Li, Bojie and Zuo, Gefei and Bai, Wei and Zhang, Lintao},
+title = {1Pipe: Scalable Total Order Communication in Data Center Networks},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472909},
+doi = {10.1145/3452296.3472909},
+abstract = {This paper proposes 1Pipe, a novel communication abstraction that enables different
+receivers to process messages from senders in a consistent total order. More precisely,
+1Pipe provides both unicast and scattering (i.e., a group of messages to different
+destinations) in a causally and totally ordered manner. 1Pipe provides a best effort
+service that delivers each message at most once, as well as a reliable service that
+guarantees delivery and provides restricted atomic delivery for each scattering. 1Pipe
+can simplify and accelerate many distributed applications, e.g., transactional key-value
+stores, log replication, and distributed data structures.We propose a scalable and
+efficient method to implement 1Pipe inside data centers. To achieve total order delivery
+in a scalable manner, 1Pipe separates the bookkeeping of order information from message
+forwarding, and distributes the work to each switch and host. 1Pipe aggregates order
+information using in-network computation at switches. This forms the “control plane”
+of the system. On the “data plane”, 1Pipe forwards messages in the network as usual
+and reorders them at the receiver based on the order information.Evaluation on a 32-server
+testbed shows that 1Pipe achieves scalable throughput (80M messages per second per
+host) and low latency (10𝜇s) with little CPU and network overhead. 1Pipe achieves
+linearly scalable throughput and low latency in transactional key-value store, TPC-C,
+remote data structures, and replication that outperforms traditional designs by 2∼20x.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {78–92},
+numpages = {15},
+keywords = {data center networks, in-network processing, total order communication, CATOCS},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472934,
+author = {Singhvi, Arjun and Akella, Aditya and Anderson, Maggie and Cauble, Rob and Deshmukh, Harshad and Gibson, Dan and Martin, Milo M. K. and Strominger, Amanda and Wenisch, Thomas F. and Vahdat, Amin},
+title = {CliqueMap: Productionizing an RMA-Based Distributed Caching System},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472934},
+doi = {10.1145/3452296.3472934},
+abstract = {Distributed in-memory caching is a key component of modern Internet services. Such
+caches are often accessed via remote procedure call (RPC), as RPC frameworks provide
+rich support for productionization, including protocol versioning, memory efficiency,
+auto-scaling, and hitless upgrades. However, full-featured RPC limits performance
+and scalability as it incurs high latencies and CPU overheads. Remote Memory Access
+(RMA) offers a promising alternative, but meeting productionization requirements can
+be a significant challenge with RMA-based systems due to limited programmability and
+narrow RMA primitives.This paper describes the design, implementation, and experience
+derived from CliqueMap, a hybrid RMA/RPC caching system. CliqueMap has been in production
+use in Google's datacenters for over three years, currently serves more than 1PB of
+DRAM, and underlies several end-user visible services. CliqueMap makes use of performant
+and efficient RMAs on the critical serving path and judiciously applies RPCs toward
+other functionality. The design embraces lightweight replication, client-based quoruming,
+self-validating server responses, per-operation client-side retries, and co-design
+with the network layers. These foci lead to a system resilient to the rigors of production
+and frequent post deployment evolution.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {93–105},
+numpages = {13},
+keywords = {remote procedure call, remote memory access, key-value caching system},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472940,
+author = {Min, Jaehong and Liu, Ming and Chugh, Tapan and Zhao, Chenxingyu and Wei, Andrew and Doh, In Hwan and Krishnamurthy, Arvind},
+title = {Gimbal: Enabling Multi-Tenant Storage Disaggregation on SmartNIC JBOFs},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472940},
+doi = {10.1145/3452296.3472940},
+abstract = {Emerging SmartNIC-based disaggregated NVMe storage has become a promising storage
+infrastructure due to its competitive IO performance and low cost. These SmartNIC
+JBOFs are shared among multiple co-resident applications, and there is a need for
+the platform to ensure fairness, QoS, and high utilization. Unfortunately, given the
+limited computing capability of the SmartNICs and the non-deterministic nature of
+NVMe drives, it is challenging to provide such support on today's SmartNIC JBOFs.This
+paper presents Gimbal, a software storage switch that orchestrates IO traffic between
+Ethernet ports and NVMe drives for co-located tenants. It enables efficient multi-tenancy
+on SmartNIC JBOFs using the following techniques: a delay-based SSD congestion control
+algorithm, dynamic estimation of SSD write costs, a fair scheduler that operates at
+the granularity of a virtual slot, and an end-to-end credit-based flow control channel.
+Our prototyped system not only achieves up to x6.6 better utilization and 62.6% less
+tail latency but also improves the fairness for complex workloads. It also improves
+a commercial key-value store performance in a multi-tenant environment with x1.7 better
+throughput and 35.0% less tail latency on average.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {106–122},
+numpages = {17},
+keywords = {fairness, disaggregated storage, SSD, congestion control},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472890,
+author = {Zelaya, R. Ivan and Sussman, William and Gummeson, Jeremy and Jamieson, Kyle and Hu, Wenjun},
+title = {LAVA: Fine-Grained 3D Indoor Wireless Coverage for Small IoT Devices},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472890},
+doi = {10.1145/3452296.3472890},
+abstract = {Small IoT devices deployed in challenging locations suffer from uneven 3D coverage
+in complex environments. This work optimizes indoor coverage with LAVA, a Large Array
+of Vanilla Amplifiers. LAVA is a standard-agnostic cooperative mesh of elements, i.e.,
+RF devices each consisting of several switched input and output antennas connected
+to fixed-gain amplifiers. Each LAVA element is further equipped with rudimentary power
+sensing to detect nearby transmissions. The elements report power readings to the
+LAVA control plane, which then infers active link sessions without explicitly interacting
+with the endpoint transmitter or receiver. With simple on-off control of amplifiers
+and antenna switching, LAVA boosts passing signals via multi hop amplify-and-forward.
+LAVA explores a middle ground between smart surfaces and physical-layer relays. Multi-hopping
+over short inter-hop distances exerts more control over the end-to-end trajectory,
+supporting fine-grained coverage and spatial reuse. Ceiling testbed results show throughput
+improvements to individual Wi-Fi links by 50% on average and up to 100% at 15 dBm
+transmit power (193% on average, up to 8x at 0 dBm). ZigBee links see up to 17 dB
+power gain. For pairs of co-channel concurrent links, LAVA provides average per-link
+throughput improvements of 517% at 0 dBm and 80% at 15 dBm.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {123–136},
+numpages = {14},
+keywords = {non-uniform 3D coverage, programmable radio environments, multi-hop amplify-and-forward, smart surfaces},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472907,
+author = {Yang, Zhijian and Choudhury, Romit Roy},
+title = {Personalizing Head Related Transfer Functions for Earables},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472907},
+doi = {10.1145/3452296.3472907},
+abstract = {Head related transfer functions (HRTF) describe how sound signals bounce, scatter,
+and diffract when they arrive at the head, and travel towards the ears. HRTFs produce
+distinct sound patterns that ultimately help the brain infer the spatial properties
+of the sound, such as its direction of arrival, 𝜃. If an earphone can learn the HRTF,
+it could apply the HRTF to any sound and make that sound appear directional to the
+user. For instance, a directional voice guide could help a tourist navigate a new
+city. While past works have estimated human HRTFs, an important gap lies in personalization.
+Today's HRTFs are global templates that are used in all products; since human HRTFs
+are unique, a global HRTF only offers a coarse-grained experience. This paper shows
+that by moving a smartphone around the head, combined with mobile acoustic communications
+between the phone and the earbuds, it is possible to estimate a user's personal HRTF.
+Our personalization system, UNIQ, combines techniques from channel estimation, motion
+tracking, and signal processing, with a focus on modeling signal diffraction on the
+curvature of the face. The results are promising and could open new doors into the
+rapidly growing space of immersive AR/VR, earables, smart hearing aids, etc.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {137–150},
+numpages = {14},
+keywords = {virtual acoustics, head related transfer function (HRTF), HRTF personalization, VR, AR, spatial audio, earables},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472932,
+author = {Vasisht, Deepak and Shenoy, Jayanth and Chandra, Ranveer},
+title = {L2D2: Low Latency Distributed Downlink for LEO Satellites},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472932},
+doi = {10.1145/3452296.3472932},
+abstract = {Large constellations of Low Earth Orbit satellites promise to provide near real-time
+high-resolution Earth imagery. Yet, getting this large amount of data back to Earth
+is challenging because of their low orbits and fast motion through space. Centralized
+architectures with few multi-million dollar ground stations incur large hour-level
+data download latency and are hard to scale. We propose a geographically distributed
+ground station design, L2D2, that uses low-cost commodity hardware to offer low latency
+robust downlink. L2D2 is the first system to use a hybrid ground station model, where
+only a subset of ground stations are uplink-capable. We design new algorithms for
+scheduling and rate adaptation that enable low latency and high robustness despite
+the limitations of the receive-only ground stations. We evaluate L2D2 through a combination
+of trace-driven simulations and real-world satellite-ground station measurements.
+Our results demonstrate that L2D2's geographically distributed design can reduce data
+downlink latency from 90 minutes to 21 minutes.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {151–164},
+numpages = {14},
+keywords = {earth observation, satellite networking, distributed ground station, ground station architecture},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472896,
+author = {Nolan, John and Qian, Kun and Zhang, Xinyu},
+title = {RoS: Passive Smart Surface for Roadside-to-Vehicle Communication},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472896},
+doi = {10.1145/3452296.3472896},
+abstract = {Modern autonomous vehicles are commonly instrumented with radars for all-weather perception.
+Yet the radar functionality is limited to identifying the positions of reflectors
+in the environment. In this paper, we investigate the feasibility of smartening transportation
+infrastructure for the purpose of conveying richer information to automotive radars.
+We propose RoS, a passive PCB-fabricated smart surface which can be reconfigured to
+embed digital bits, and inform the radar much like visual road signs do to cameras.
+We design the RoS signage to act as a retrodirective reflector which can reflect signals
+back to the radar from wide viewing angles. We further introduce a spatial encoding
+scheme, which piggybacks information in the reflected analog signals based on the
+geometrical layout of the retroreflective elements. Our prototype fabrication and
+experimentation verifies the effectiveness of RoS as an RF ''barcode'' which is readable
+by radar in practical transportation environment.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {165–178},
+numpages = {14},
+keywords = {V2X, intelligent reflecting surface, Van Atta array, smart surface, millimeter wave radar},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472887,
+author = {Yu, Zhuolong and Hu, Chuheng and Wu, Jingfeng and Sun, Xiao and Braverman, Vladimir and Chowdhury, Mosharaf and Liu, Zhenhua and Jin, Xin},
+title = {Programmable Packet Scheduling with a Single Queue},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472887},
+doi = {10.1145/3452296.3472887},
+abstract = {Programmable packet scheduling enables scheduling algorithms to be programmed into
+the data plane without changing the hardware. Existing proposals either have no hardware
+implementations for switch ASICs or require multiple strict-priority queues.We present
+Admission-In First-Out (AIFO) queues, a new solution for programmable packet scheduling
+that uses only a emph{single} first-in first-out queue. AIFO is motivated by the
+confluence of two recent trends: emph{shallow} buffers in switches and emph{fast-converging}
+congestion control in end hosts, that together leads to a simple observation: the
+decisive factor in a flow's completion time (FCT) in modern datacenter networks is
+often emph{which} packets are enqueued or dropped, not the emph{ordering} they leave
+the switch. The core idea of AIFO is to maintain a sliding window to track the ranks
+of recent packets and compute the relative rank of an arriving packet in the window
+for admission control. Theoretically, we prove that AIFO provides bounded performance
+to Push-In First-Out (PIFO). Empirically, we fully implement AIFO and evaluate AIFO
+with a range of real workloads, demonstrating AIFO closely approximates PIFO. Importantly,
+unlike PIFO, AIFO can run at line rate on existing hardware and use minimal switch
+resources---as few as a single queue.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {179–193},
+numpages = {15},
+keywords = {packet scheduling, in-network processing, programmable networks, data center networks},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472889,
+author = {Pan, Tian and Yu, Nianbing and Jia, Chenhao and Pi, Jianwen and Xu, Liang and Qiao, Yisong and Li, Zhiguo and Liu, Kun and Lu, Jie and Lu, Jianyuan and Song, Enge and Zhang, Jiao and Huang, Tao and Zhu, Shunmin},
+title = {Sailfish: Accelerating Cloud-Scale Multi-Tenant Multi-Service Gateways with Programmable Switches},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472889},
+doi = {10.1145/3452296.3472889},
+abstract = {The cloud gateway is essential in the public cloud as the central hub of cloud traffic.
+We show that horizontal scaling of software gateways, once sustainable for years,
+is no longer future-proof facing the massive scale and rapid growth of today's cloud.
+The root cause is the stagnant performance of the CPU core, which is prone to be overloaded
+by heavy hitters as traffic growth goes far beyond Moore's law. To address this, we
+propose emph{Sailfish}, a cloud-scale multi-tenant multi-service gateway accelerated
+by programmable switches. The new challenge is that large forwarding tables due to
+multi-tenancy cannot be fit into the limited on-chip memories. To this end, we devise
+a multi-pronged approach with (1) hardware/software co-design for table sharing, (2)
+horizontal table splitting among gateway clusters, (3) pipeline-aware table compression
+for a single node. Compared with the x86 gateway of a similar price, Sailfish reduces
+latency by 95% (2μs), improves throughput by more than 20x in bps (3.2Tbps) and 71x
+in pps (1.8Gpps) with packet length &lt; 256B. Sailfish has been deployed in Alibaba
+Cloud for more than two years. It is the first P4-based cloud gateway in the industry,
+of which a single cluster carries dozens of Tbps traffic, withstanding peak-hour traffic
+in large online shopping festivals.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {194–206},
+numpages = {13},
+keywords = {forwarding table compression, programmable data plane, cloud gateways, virtual private cloud},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472892,
+author = {Zhang, Yinda and Liu, Zaoxing and Wang, Ruixin and Yang, Tong and Li, Jizhou and Miao, Ruijie and Liu, Peng and Zhang, Ruwen and Jiang, Junchen},
+title = {CocoSketch: High-Performance Sketch-Based Measurement over Arbitrary Partial Key Query},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472892},
+doi = {10.1145/3452296.3472892},
+abstract = {Sketch-based measurement has emerged as a promising alternative to the traditional
+sampling-based network measurement approaches due to its high accuracy and resource
+efficiency. While there have been various designs around sketches, they focus on measuring
+one particular flow key, and it is infeasible to support many keys based on these
+sketches. In this work, we take a significant step towards supporting arbitrary partial
+key queries, where we only need to specify a full range of possible flow keys that
+are of interest before measurement starts, and in query time, we can extract the information
+of any key in that range. We design CocoSketch, which casts arbitrary partial key
+queries to the subset sum estimation problem and makes the theoretical tools for subset
+sum estimation practical. To realize desirable resource-accuracy tradeoffs in software
+and hardware platforms, we propose two techniques: (1) stochastic variance minimization
+to significantly reduce per-packet update delay, and (2) removing circular dependencies
+in the per-packet update logic to make the implementation hardware-friendly. We implement
+CocoSketch on four popular platforms (CPU, Open vSwitch, P4, and FPGA) and show that
+compared to baselines that use traditional single-key sketches, CocoSketch improves
+average packet processing throughput by 27.2x and accuracy by 10.4x when measuring
+six flow keys.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {207–222},
+numpages = {16},
+keywords = {P4, sketch, FPGA, arbitrary partial key query},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472905,
+author = {Kim, Daehyeok and Nelson, Jacob and Ports, Dan R. K. and Sekar, Vyas and Seshan, Srinivasan},
+title = {RedPlane: Enabling Fault-Tolerant Stateful in-Switch Applications},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472905},
+doi = {10.1145/3452296.3472905},
+abstract = {Many recent efforts have demonstrated the performance benefits of running datacenter
+functions (emph{e.g.,} NATs, load balancers, monitoring) on programmable switches.
+However, a key missing piece remains: fault tolerance. This is especially critical
+as the network is no longer stateless and pure endpoint recovery does not suffice.
+In this paper, we design and implement RedPlane, a fault-tolerant state store for
+stateful in-switch applications. This provides in-switch applications consistent access
+to their state, even if the switch they run on fails or traffic is rerouted to an
+alternative switch. We address key challenges in devising a practical, provably correct
+replication protocol and implementing it in the switch data plane. Our evaluations
+show that RedPlane incurs negligible overhead and enables end-to-end applications
+to rapidly recover from switch failures.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {223–244},
+numpages = {22},
+keywords = {programmable switches, state replication, programmable networks, fault tolerance},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472914,
+author = {Tu, William and Wei, Yi-Hung and Antichi, Gianni and Pfaff, Ben},
+title = {Revisiting the Open VSwitch Dataplane Ten Years Later},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472914},
+doi = {10.1145/3452296.3472914},
+abstract = {This paper shares our experience in supporting and running the Open vSwitch (OVS)
+software switch, as part of the NSX product for enterprise data center virtualization
+used by thousands of VMware customers. Starting in 2009, the OVS design split its
+code between tightly coupled kernel and userspace components. This split was necessary
+at the time for performance, but it caused maintainability problems that persist today.
+In addition, in-kernel packet processing is now much slower than newer options.To
+solve the problems caused by the user/kernel split, OVS must adopt a new architecture.
+We describe two possibilities that we explored, but did not adopt, one because it
+gives up compatibility with drivers and tools that are important to virtual data center
+operators, the other because it performs poorly. Instead, we endorse a third approach,
+based on a new Linux socket type called AF_XDP, which solves the maintainability
+problem in a compatible, performant way. The new code is already merged into the mainstream
+OVS repository. We include a thorough performance evaluation and a collection of lessons
+learned.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {245–257},
+numpages = {13},
+keywords = {OVS, virtual switch, XDP, eBPF},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472902,
+author = {Zhu, Hang and Gupta, Varun and Ahuja, Satyajeet Singh and Tian, Yuandong and Zhang, Ying and Jin, Xin},
+title = {Network Planning with Deep Reinforcement Learning},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472902},
+doi = {10.1145/3452296.3472902},
+abstract = {Network planning is critical to the performance, reliability and cost of web services.
+This problem is typically formulated as an Integer Linear Programming (ILP) problem.
+Today's practice relies on hand-tuned heuristics from human experts to address the
+scalability challenge of ILP solvers.In this paper, we propose NeuroPlan, a deep reinforcement
+learning (RL) approach to solve the network planning problem. This problem involves
+multi-step decision making and cost minimization, which can be naturally cast as a
+deep RL problem. We develop two important domain-specific techniques. First, we use
+a graph neural network (GNN) and a novel domain-specific node-link transformation
+for state encoding, in order to handle the dynamic nature of the evolving network
+topology during planning decision making. Second, we leverage a two-stage hybrid approach
+that first uses deep RL to prune the search space and then uses an ILP solver to find
+the optimal solution. This approach resembles today's practice, but avoids human experts
+with an RL agent in the first stage. Evaluation on real topologies and setups from
+large production networks demonstrates that NeuroPlan scales to large topologies beyond
+the capability of ILP solvers, and reduces the cost by up to 17% compared to hand-tuned
+heuristics.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {258–271},
+numpages = {14},
+keywords = {reinforcement learning, network planning, graph neural network},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472910,
+author = {Yen, Jane and L\'{e}vai, Tam\'{a}s and Ye, Qinyuan and Ren, Xiang and Govindan, Ramesh and Raghavan, Barath},
+title = {Semi-Automated Protocol Disambiguation and Code Generation},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472910},
+doi = {10.1145/3452296.3472910},
+abstract = {For decades, Internet protocols have been specified using natural language. Given
+the ambiguity inherent in such text, it is not surprising that protocol implementations
+have long exhibited bugs. In this paper, we apply natural language processing (NLP)
+to effect semi-automated generation of protocol implementations from specification
+text. Our system, Sage, can uncover ambiguous or under-specified sentences in specifications;
+once these are clarified by the author of the protocol specification, Sage can generate
+protocol code automatically.Using Sage, we discover 5 instances of ambiguity and 6
+instances of under-specification in the ICMP RFC; after fixing these, Sage is able
+to automatically generate code that interoperates perfectly with Linux implementations.
+We show that Sage generalizes to sections of BFD, IGMP, and NTP and identify additional
+conceptual components that Sage needs to support to generalize to complete, complex
+protocols like BGP and TCP.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {272–286},
+numpages = {15},
+keywords = {protocol specifications, natural language},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472926,
+author = {Zhang, Qizhen and Ng, Kelvin K. W. and Kazer, Charles and Yan, Shen and Sedoc, Jo\~{a}o and Liu, Vincent},
+title = {MimicNet: Fast Performance Estimates for Data Center Networks with Machine Learning},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472926},
+doi = {10.1145/3452296.3472926},
+abstract = {At-scale evaluation of new data center network innovations is becoming increasingly
+intractable. This is true for testbeds, where few, if any, can afford a dedicated,
+full-scale replica of a data center. It is also true for simulations, which while
+originally designed for precisely this purpose, have struggled to cope with the size
+of today's networks. This paper presents an approach for quickly obtaining accurate
+performance estimates for large data center networks. Our system,MimicNet, provides
+users with the familiar abstraction of a packet-level simulation for a portion of
+the network while leveraging redundancy and recent advances in machine learning to
+quickly and accurately approximate portions of the network that are not directly visible.
+MimicNet can provide over two orders of magnitude speedup compared to regular simulation
+for a data center with thousands of servers. Even at this scale, MimicNet estimates
+of the tail FCT, throughput, and RTT are within 5% of the true results.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {287–304},
+numpages = {18},
+keywords = {network modeling, approximation, machine learning, network simulation, data center networks},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472936,
+author = {Eliyahu, Tomer and Kazak, Yafim and Katz, Guy and Schapira, Michael},
+title = {Verifying Learning-Augmented Systems},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472936},
+doi = {10.1145/3452296.3472936},
+abstract = {The application of deep reinforcement learning (DRL) to computer and networked systems
+has recently gained significant popularity. However, the obscurity of decisions by
+DRL policies renders it hard to ascertain that learning-augmented systems are safe
+to deploy, posing a significant obstacle to their real-world adoption. We observe
+that specific characteristics of recent applications of DRL to systems contexts give
+rise to an exciting opportunity: applying formal verification to establish that a
+given system provably satisfies designer/user-specified requirements, or to expose
+concrete counter-examples. We present whiRL, a platform for verifying DRL policies
+for systems, which combines recent advances in the verification of deep neural networks
+with scalable model checking techniques. To exemplify its usefulness, we employ whiRL
+to verify natural equirements from recently introduced learning-augmented systems
+for three real-world environments: Internet congestion control, adaptive video streaming,
+and job scheduling in compute clusters. Our evaluation shows that whiRL is capable
+of guaranteeing that natural requirements from these systems are satisfied, and of
+exposing specific scenarios in which other basic requirements are not.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {305–318},
+numpages = {14},
+keywords = {networked systems, adaptive bitrate algorithms, resource scheduling, deep learning, neural networks, congestion control, deep reinforcement learning, formal verification},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472898,
+author = {Ros-Giralt, Jordi and Amsel, Noah and Yellamraju, Sruthi and Ezick, James and Lethin, Richard and Jiang, Yuang and Feng, Aosong and Tassiulas, Leandros and Wu, Zhenguo and Teh, Min Yee and Bergman, Keren},
+title = {Designing Data Center Networks Using Bottleneck Structures},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472898},
+doi = {10.1145/3452296.3472898},
+abstract = {This paper provides a mathematical model of data center performance based on the recently
+introduced Quantitative Theory of Bottleneck Structures (QTBS). Using the model, we
+prove that if the traffic pattern is textit{interference-free}, there exists a unique
+optimal design that both minimizes maximum flow completion time and yields maximal
+system-wide throughput. We show that interference-free patterns correspond to the
+important set of patterns that display data locality properties and use these theoretical
+insights to study three widely used interconnects---fat-trees, folded-Clos and dragonfly
+topologies. We derive equations that describe the optimal design for each interconnect
+as a function of the traffic pattern. Our model predicts, for example, that a 3-level
+folded-Clos interconnect with radix 24 that routes 10% of the traffic through the
+spine links can reduce the number of switches and cabling at the core layer by 25%
+without any performance penalty. We present experiments using production TCP/IP code
+to empirically validate the results and provide tables for network designers to identify
+optimal designs as a function of the size of the interconnect and traffic pattern.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {319–348},
+numpages = {30},
+keywords = {design, model, data center, max-min, bottleneck structure},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472913,
+author = {Namyar, Pooria and Supittayapornpong, Sucha and Zhang, Mingyang and Yu, Minlan and Govindan, Ramesh},
+title = {A Throughput-Centric View of the Performance of Datacenter Topologies},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472913},
+doi = {10.1145/3452296.3472913},
+abstract = {While prior work has explored many proposed datacenter designs, only two designs,
+Clos-based and expander-based, are generally considered practical because they can
+scale using commodity switching chips. Prior work has used two different metrics,
+bisection bandwidth and throughput, for evaluating these topologies at scale. Little
+is known, theoretically or practically, how these metrics relate to each other. Exploiting
+characteristics of these topologies, we prove an upper bound on their throughput,
+then show that this upper bound better estimates worst-case throughput than all previously
+proposed throughput estimators and scales better than most of them. Using this upper
+bound, we show that for expander-based topologies, unlike Clos, beyond a certain size
+of the network, no topology can have full throughput, even if it has full bisection
+bandwidth; in fact, even relatively small expander-based topologies fail to achieve
+full throughput. We conclude by showing that using throughput to evaluate datacenter
+performance instead of bisection bandwidth can alter conclusions in prior work about
+datacenter cost, manageability, and reliability.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {349–369},
+numpages = {21},
+keywords = {data centers, throughput, network management, Clos topologies},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472899,
+author = {Zhang, Yiran and Liu, Yifan and Meng, Qingkai and Ren, Fengyuan},
+title = {Congestion Detection in Lossless Networks},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472899},
+doi = {10.1145/3452296.3472899},
+abstract = {Congestion detection is the cornerstone of end-to-end congestion control. Through
+in-depth observations and understandings, we reveal that existing congestion detection
+mechanisms in mainstream lossless networks (i.e., Converged Enhanced Ethernet and
+InfiniBand) are improper, due to failing to cognize the interaction between hop-by-hop
+flow controls and congestion detection behaviors in switches. We define ternary states
+of switch ports and present Ternary Congestion Detection (TCD) for mainstream lossless
+networks. Testbed and extensive simulations demonstrate that TCD can detect congestion
+ports accurately and identify flows contributing to congestion as well as flows only
+affected by hop-by-hop flow controls. Meanwhile, we shed light on how to incorporate
+TCD with rate control. Case studies show that existing congestion control algorithms
+can achieve 3.3x and 2.0x better median and 99th-percentile FCT slowdown by combining
+with TCD.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {370–383},
+numpages = {14},
+keywords = {lossless networks, congestion detection, flow control},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472927,
+author = {Yan, Siyu and Wang, Xiaoliang and Zheng, Xiaolong and Xia, Yinben and Liu, Derui and Deng, Weishan},
+title = {ACC: Automatic ECN Tuning for High-Speed Datacenter Networks},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472927},
+doi = {10.1145/3452296.3472927},
+abstract = {For the widely deployed ECN-based congestion control schemes, the marking threshold
+is the key to deliver high bandwidth and low latency. However, due to traffic dynamics
+in the high-speed production networks, it is difficult to maintain persistent performance
+by using the static ECN setting. To meet the operational challenge, in this paper
+we report the design and implementation of an automatic run-time optimization scheme,
+ACC, which leverages the multi-agent reinforcement learning technique to dynamically
+adjust the marking threshold at each switch. The proposed approach works in a distributed
+fashion and combines offline and online training to adapt to dynamic traffic patterns.
+It can be easily deployed based on the common features supported by major commodity
+switching chips. Both testbed experiments and large-scale simulations have shown that
+ACC achieves low flow completion time (FCT) for both mice flows and elephant flows
+at line-rate. Under heterogeneous production environments with 300 machines, compared
+with the well-tuned static ECN settings, ACC achieves up to 20% improvement on IOPS
+and 30% lower FCT for storage service. ACC has been applied in high-speed datacenter
+networks and significantly simplifies the network operations.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {384–397},
+numpages = {14},
+keywords = {datacenter network, ECN, congestion control, AQM},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472891,
+author = {Koch, Thomas and Katz-Bassett, Ethan and Heidemann, John and Calder, Matt and Ardi, Calvin and Li, Ke},
+title = {Anycast In Context: A Tale of Two Systems},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472891},
+doi = {10.1145/3452296.3472891},
+abstract = {Anycast is used to serve content including web pages and DNS, and anycast deployments
+are growing. However, prior work examining root DNS suggests anycast deployments incur
+significant inflation, with users often routed to suboptimal sites. We reassess anycast
+performance, first extending prior analysis on inflation in the root DNS. We show
+that inflation is very common in root DNS, affecting more than 95% of users. However,
+we then show root DNS latency emph{hardly matters} to users because caching is so
+effective. These findings lead us to question: is inflation inherent to anycast, or
+can inflation be limited when it matters? To answer this question, we consider Microsoft's
+anycast CDN serving latency-sensitive content. Here, latency matters orders of magnitude
+more than for root DNS. Perhaps because of this need, only 35% of CDN users experience
+any inflation, and the amount they experience is smaller than root DNS. We show that
+CDN anycast latency has little inflation due to extensive peering and engineering.
+These results suggest prior claims of anycast inefficiency reflect experiments on
+a single application rather than anycast's technical potential, and they demonstrate
+the importance of context when measuring system performance.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {398–417},
+numpages = {20},
+keywords = {routing, CDN, latency, Anycast, root DNS},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472893,
+author = {Zheng, Zhilong and Ma, Yunfei and Liu, Yanmei and Yang, Furong and Li, Zhenyu and Zhang, Yuanbo and Zhang, Jiuhai and Shi, Wei and Chen, Wentao and Li, Ding and An, Qing and Hong, Hai and Liu, Hongqiang Harry and Zhang, Ming},
+title = {XLINK: QoE-Driven Multi-Path QUIC Transport in Large-Scale Video Services},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472893},
+doi = {10.1145/3452296.3472893},
+abstract = {We report XLINK, a multi-path QUIC video transport solution with experiments in Taobao
+short videos. XLINK is designed to meet two operational challenges at the same time:
+(1) Optimized user-perceived quality of experience (QoE) in terms of robustness, smoothness,
+responsiveness, and mobility and (2) Minimized cost overhead for service providers
+(typically CDNs). The core of XLINK is to take the opportunity of QUIC as a user-space
+protocol and directly capture user-perceived video QoE intent to control multi-path
+scheduling and management. We overcome major hurdles such as multi-path head-of-line
+blocking, network heterogeneity, and rapid link variations and balance cost and performance.To
+the best of our knowledge, XLINK is the first large-scale experimental study of multi-path
+QUIC video services in production environments. We present the results of over 3 million
+e-commerce product short-video plays from consumers who upgraded to Taobao android
+app with XLINK. Our study shows that compared to single-path QUIC, XLINK achieved
+19 to 50% improvement in the 99-th percentile video-chunk request completion time,
+32% improvement in the 99-th percentile first-video-frame latency, 23 to 67% improvement
+in the re-buffering rate at the expense of 2.1% redundant traffic.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {418–432},
+numpages = {15},
+keywords = {video, QUIC, scheduling, multi-path, wireless transport, QoE},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472922,
+author = {Fayed, Marwan and Bauer, Lorenz and Giotsas, Vasileios and Kerola, Sami and Majkowski, Marek and Odintsov, Pavel and Sitnicki, Jakub and Chung, Taejoong and Levin, Dave and Mislove, Alan and Wood, Christopher A. and Sullivan, Nick},
+title = {The Ties That Un-Bind: Decoupling IP from Web Services and Sockets for Robust Addressing Agility at CDN-Scale},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472922},
+doi = {10.1145/3452296.3472922},
+abstract = {The couplings between IP addresses, names of content or services, and socket interfaces,
+are too tight. This impedes system manageability, growth, and overall provisioning.
+In turn, large-scale content providers are forced to use staggering numbers of addresses,
+ultimately leading to address exhaustion (IPv4) and inefficiency (IPv6).In this paper,
+we revisit IP bindings, entirely. We attempt to evolve addressing conventions by decoupling
+IP in DNS and from network sockets. Alongside technologies such as SNI and ECMP, a
+new architecture emerges that ``unbinds'' IP from services and servers, thereby returning
+IP's role to merely that of reachability. The architecture is under evaluation at
+a major CDN in multiple datacenters. We show that addresses can be generated randomly
+emph{per-query}, for 20M+ domains and services, from as few as ~4K addresses, 256
+addresses, and even emph{one} IP address. We explain why this approach is transparent
+to routing, L4/L7 load-balancers, distributed caching, and all surrounding systems
+-- and is emph{highly desirable}. Our experience suggests that many network-oriented
+systems and services (e.g., route leak mitigation, denial of service, measurement)
+could be improved, and new ones designed, if built with addressing agility.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {433–446},
+numpages = {14},
+keywords = {content distribution, addressing, programmable sockets, provisioning},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472935,
+author = {Zhang, Xiao and Sen, Tanmoy and Zhang, Zheyuan and April, Tim and Chandrasekaran, Balakrishnan and Choffnes, David and Maggs, Bruce M. and Shen, Haiying and Sitaraman, Ramesh K. and Yang, Xiaowei},
+title = {AnyOpt: Predicting and Optimizing IP Anycast Performance},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472935},
+doi = {10.1145/3452296.3472935},
+abstract = {The key to optimizing the performance of an anycast-based system (e.g., the root DNS
+or a CDN) is choosing the right set of sites to announce the anycast prefix. One challenge
+here is predicting catchments. A na\"{\i}ve approach is to advertise the prefix from all
+subsets of available sites and choose the best-performing subset, but this does not
+scale well. We demonstrate that by conducting pairwise experiments between sites peering
+with tier-1 networks, we can predict the catchments that would result if we announce
+to any subset of the sites. We prove that our method is effective in a simplified
+model of BGP, consistent with common BGP routing policies, and evaluate it in a real-world
+testbed. We then present AnyOpt, a system that predicts anycast catchments. Using
+AnyOpt, a network operator can find a subset of anycast sites that minimizes client
+latency without using the na\"{\i}ve approach. In an experiment using 15 sites, each peering
+with one of six transit providers, AnyOpt predicted site catchments of 15,300 clients
+with 94.7% accuracy and client RTTs with a mean error of 4.6%. AnyOpt identified a
+subset of 12 sites, announcing to which lowers the mean RTT to clients by 33ms compared
+to a greedy approach that enables the same number of sites with the lowest average
+unicast latency.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {447–462},
+numpages = {16},
+keywords = {performance optimization, Anycast, routing, BGP},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472917,
+author = {Mazaheri, Mohammad Hossein and Chen, Alex and Abari, Omid},
+title = {MmTag: A Millimeter Wave Backscatter Network},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472917},
+doi = {10.1145/3452296.3472917},
+abstract = {Recent advances in IoT, machine learning and cloud computing have placed a huge strain
+on wireless networks. In particular, many emerging applications require streaming
+rich content (such as videos) in real time, while they are constrained by energy sources.
+A wireless network which supports high data-rate while consuming low-power would be
+very attractive for these applications. Unfortunately, existing wireless networks
+do not satisfy this requirement. For example, WiFi backscatter and Bluetooth networks
+have very low power consumption, but their data-rate is very limited (less than a
+Mbps). On the other hand, modern WiFi and mmWave networks support high throughput,
+but have a high power consumption (more than a watt).To address this problem, we present
+mmTag, a novel mmWave backscatter network which enables low-power high-throughput
+wireless links for emerging applications. mmTag is a backscatter system which operates
+in the mmWave frequency bands. mmTag addresses the key challenges that prevent existing
+backscatter networks from operating at mmWave bands. We implemented mmTag and evaluated
+its performance empirically. Our results show that mmTag is capable of achieving 1
+Gbps and 100 Mbps at 4.6 m and 8 m, respectively, while consuming only 2.4 nJ/bit.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {463–474},
+numpages = {12},
+keywords = {low power, mmWave, wireless, IoT, internet of things, backscatter},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472920,
+author = {Cho, Hsun-Wei and Shin, Kang G.},
+title = {BlueFi: Bluetooth over WiFi},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472920},
+doi = {10.1145/3452296.3472920},
+abstract = {Bluetooth and WiFi are the two dominant technologies enabling the communication of
+mobile and IoT devices. Built with specific design goals and principles, they are
+vastly different, each using its own hardware and software. Thus, they are not interoperable
+and require different hardware.One may, therefore, ask a simple, yet seemingly impossible
+question: “Can we transmit Bluetooth packets on commercial off-the-shelf (COTS) WiFi
+hardware?” We answer this question positively by designing, implementing and demonstrating
+a novel system called BlueFi. It can readily run on existing, widely-deployed WiFi
+devices without modifying NIC firmware/hardware. BlueFi works by reversing the signal
+processing of WiFi hardware and finds special 802.11n packets that are decodable by
+unmodified Bluetooth devices. With BlueFi, every 802.11n device can be used simultaneously
+as a Bluetooth device, which instantly increases the coverage of Bluetooth, thanks
+to the omnipresence of WiFi devices. BlueFi is particularly useful for WiFi-only devices
+or environments.We implement and evaluate BlueFi on devices with widely-adopted WiFi
+chips. We also construct two prevalent end-to-end apps — Bluetooth beacon and audio
+— to showcase the practical use of BlueFi. The former allows ordinary APs to send
+location beacons; the latter enables WiFi chips to stream Bluetooth audio in real
+time.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {475–487},
+numpages = {13},
+keywords = {Bluetooth, cross-technology communication, WiFi},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472924,
+author = {Jain, Ish Kumar and Subbaraman, Raghav and Bharadia, Dinesh},
+title = {Two Beams Are Better than One: Towards Reliable and High Throughput MmWave Links},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472924},
+doi = {10.1145/3452296.3472924},
+abstract = {Millimeter-wave communication with high throughput and high reliability is poised
+to be a gamechanger for V2X and VR applications. However, mmWave links are notorious
+for low reliability since they suffer from frequent outages due to blockage and user
+mobility. We build mmReliable, a reliable mmWave system that implements multi-beamforming
+and user tracking to handle environmental vulnerabilities. It creates constructive
+multi-beam patterns and optimizes their angle, phase, and amplitude to maximize the
+signal strength at the receiver. Multi-beam links are reliable since they are resilient
+to occasional blockages of few constituent beams compared to a single-beam system.
+We implement mmReliable on a 28 GHz testbed with 400 MHz bandwidth, and a 64 element
+phased array supporting 5G NR waveforms. Rigorous indoor and outdoor experiments demonstrate
+that mmReliable achieves close to 100% reliability providing 2.3x improvement in
+the throughput-reliability product than single-beam systems.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {488–502},
+numpages = {15},
+keywords = {multi-beam, blockage, throughput, phased arrays, millimeter-wave, 5G NR, tracking, reliability, mobility, analog beamforming},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472931,
+author = {Shahid, Muhammad Osama and Philipose, Millan and Chintalapudi, Krishna and Banerjee, Suman and Krishnaswamy, Bhuvana},
+title = {Concurrent Interference Cancellation: Decoding Multi-Packet Collisions in LoRa},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472931},
+doi = {10.1145/3452296.3472931},
+abstract = {LoRa has seen widespread adoption as a long range IoT technology. As the number of
+LoRa deployments grow, packet collisions undermine its overall network throughput.
+In this paper, we propose a novel interference cancellation technique -- Concurrent
+Interference Cancellation (CIC), that enables concurrent decoding of multiple collided
+LoRa packets. CIC fundamentally differs from existing approaches as it demodulates
+symbols by canceling out all other interfering symbols. It achieves this cancellation
+by carefully selecting a set of sub-symbols -- pieces of the original symbol such
+that no interfering symbol is common across all sub-symbols in this set. Thus, after
+demodulating each sub-symbol, an intersection across their spectra cancels out all
+the interfering symbols. Through LoRa deployments using COTS devices, we demonstrate
+that CIC can increase the network capacity of standard LoRa by up to 10x and up to
+4x over the state-of-the-art research. While beneficial across all scenarios, CIC
+has even more significant benefits under low SNR conditions that are common to LoRa
+deployments, in which prior approaches appear to perform quite poorly.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {503–515},
+numpages = {13},
+keywords = {multi-packet collisions, LoRa, interference cancellation},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472928,
+author = {Gigis, Petros and Calder, Matt and Manassakis, Lefteris and Nomikos, George and Kotronis, Vasileios and Dimitropoulos, Xenofontas and Katz-Bassett, Ethan and Smaragdakis, Georgios},
+title = {Seven Years in the Life of Hypergiants' off-Nets},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472928},
+doi = {10.1145/3452296.3472928},
+abstract = {Content Hypergiants deliver the vast majority of Internet traffic to end users. In
+recent years, some have invested heavily in deploying services and servers inside
+end-user networks. With several dozen Hypergiants and thousands of servers deployed
+inside networks, these off-net (meaning outside the Hypergiant networks) deployments
+change the structure of the Internet. Previous efforts to study them have relied on
+proprietary data or specialized per-Hypergiant measurement techniques that neither
+scale nor generalize, providing a limited view of content delivery on today's Internet.In
+this paper, we develop a generic and easy to implement methodology to measure the
+expansion of Hypergiants' off-nets. Our key observation is that Hypergiants increasingly
+encrypt their traffic to protect their customers' privacy. Thus, we can analyze publicly
+available Internet-wide scans of port 443 and retrieve TLS certificates to discover
+which IP addresses host Hypergiant certificates in order to infer the networks hosting
+off-nets for the corresponding Hypergiants. Our results show that the number of networks
+hosting Hypergiant off-nets has tripled from 2013 to 2021, reaching 4.5k networks.
+The largest Hypergiants dominate these deployments, with almost all of these networks
+hosting an off-net for at least one -- and increasingly two or more -- of Google,
+Netflix, Facebook, or Akamai. These four Hypergiants have off-nets within networks
+that provide access to a significant fraction of end user population.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {516–533},
+numpages = {18},
+keywords = {Hypergiants, TLS, server deployment, content delivery networks},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472895,
+author = {Singh, Rachee and Bjorner, Nikolaj and Shoham, Sharon and Yin, Yawei and Arnold, John and Gaudette, Jamie},
+title = {Cost-Effective Capacity Provisioning in Wide Area Networks with Shoofly},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472895},
+doi = {10.1145/3452296.3472895},
+abstract = {In this work we propose Shoofly, a network design tool that minimizes hardware costs
+of provisioning long-haul capacity by optically bypassing network hops where conversion
+of signals from optical to electrical domain is unnecessary and uneconomical. Shoofly
+leverages optical signal quality and traffic demand telemetry from a large commercial
+cloud provider to identify optical bypasses in the cloud WAN that reduce the hardware
+cost of long-haul capacity by 40%. A key challenge is that optical bypasses cause
+signals to travel longer distances on fiber before re-generation, potentially reducing
+link capacities and resilience to optical link failures. Despite these challenges,
+Shoofly provisions bypass-enabled topologies that meet 8X the present-day demands
+using existing network hardware. Even under aggressive stochastic and deterministic
+link failure scenarios, these topologies save 32% of the cost of long-haul capacity.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {534–546},
+numpages = {13},
+keywords = {backbone design, traffic engineering, optical bypass},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472918,
+author = {Ahuja, Satyajeet Singh and Gupta, Varun and Dangui, Vinayak and Bali, Soshant and Gopalan, Abishek and Zhong, Hao and Lapukhov, Petr and Xia, Yiting and Zhang, Ying},
+title = {Capacity-Efficient and Uncertainty-Resilient Backbone Network Planning with Hose},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472918},
+doi = {10.1145/3452296.3472918},
+abstract = {This paper presents Facebook's design and operational experience of a Hose-based backbone
+network planning system. This initial adoption of the Hose model in network planning
+is driven by the capacity and demand uncertainty pressure of backbone expansion. Since
+the Hose model abstracts the aggregated traffic demand per site, peak traffic flows
+at different times can be multiplexed to save capacity and buffer traffic spikes.
+Our core design involves heuristic algorithms to select Hose-compliant traffic matrices
+and cross-layer optimization between the optical and IP networks. We evaluate the
+system performance in production and share insights from years of production experience.
+Hose-based network planning can save 17.4% capacity and drops 75% less traffic under
+fiber cuts. As the first study of Hose in network planning, our work has the potential
+to inspire follow-up research.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {547–559},
+numpages = {13},
+keywords = {network optimization, wide-area networks, network planning, network modeling},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472921,
+author = {Zhong, Zhizhen and Ghobadi, Manya and Khaddaj, Alaa and Leach, Jonathan and Xia, Yiting and Zhang, Ying},
+title = {ARROW: Restoration-Aware Traffic Engineering},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472921},
+doi = {10.1145/3452296.3472921},
+abstract = {Fiber cut events reduce the capacity of wide-area networks (WANs) by several Tbps.
+In this paper, we revive the lost capacity by reconfiguring the wavelengths from cut
+fibers into healthy fibers. We highlight two challenges that made prior solutions
+impractical and propose a system called Arrow to address them. First, our measurements
+show that contrary to common belief, in most cases, the lost capacity is only partially
+restorable. This poses a cross-layer challenge from the Traffic Engineering (TE) perspective
+that has not been considered before: “Which IP links should be restored and by how
+much to best match the TE objective?” To address this challenge, Arrow's restoration-aware
+TE system takes a set of partial restoration candidates (that we call LotteryTickets)
+as input and proactively finds the best restoration plan. Second, prior work has not
+considered the reconfiguration latency of amplifiers. However, in practical settings,
+amplifiers add tens of minutes of reconfiguration delay. To enable fast and practical
+restoration, Arrow leverages optical noise loading and bypasses amplifier reconfiguration
+altogether. We evaluate Arrow using large-scale simulations and a testbed. Our testbed
+demonstrates Arrow's end-to-end restoration latency is eight seconds. Our large-scale
+simulations compare Arrow to the state-of-the-art TE schemes and show it can support
+2.0x--2.4x more demand without compromising 99.99% availability.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {560–579},
+numpages = {20},
+keywords = {optical restoration, network optimization, wide-area networks, traffic engineering, randomized rounding},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472894,
+author = {Foukas, Xenofon and Radunovic, Bozidar},
+title = {Concordia: Teaching the 5G VRAN to Share Compute},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472894},
+doi = {10.1145/3452296.3472894},
+abstract = {Virtualized Radio Access Network (vRAN) offers a cost-efficient solution for running
+the 5G RAN as a virtualized network function (VNF) on commodity hardware. The vRAN
+is more efficient than traditional RANs, as it multiplexes several base station workloads
+on the same compute hardware. Our measurements show that, whilst this multiplexing
+provides efficiency gains, more than 50% of the CPU cycles in typical vRAN settings
+still remain unused. A way to further improve CPU utilization is to collocate the
+vRAN with general-purpose workloads. However, to maintain performance, vRAN tasks
+have sub-millisecond latency requirements that have to be met 99.999% of times. We
+show that this is difficult to achieve with existing systems. We propose Concordia,
+a userspace deadline scheduling framework for the vRAN on Linux. Concordia builds
+prediction models using quantile decision trees to predict the worst case execution
+times of vRAN signal processing tasks. The Concordia scheduler is fast (runs every
+20 us) and the prediction models are accurate, enabling the system to reserve a minimum
+number of cores required for vRAN tasks, leaving the rest for general-purpose workloads.
+We evaluate Concordia on a commercial-grade reference vRAN platform. We show that
+it meets the 99.999% reliability requirements and reclaims more than 70% of idle CPU
+cycles without affecting the RAN performance.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {580–596},
+numpages = {17},
+keywords = {edge computing, 5G, vRAN, prediction model, machine learning, real-time scheduling, NFV, mobile networks},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472908,
+author = {Li, Yang and Lin, Hao and Li, Zhenhua and Liu, Yunhao and Qian, Feng and Gong, Liangyi and Xin, Xianlong and Xu, Tianyin},
+title = {A Nationwide Study on Cellular Reliability: Measurement, Analysis, and Enhancements},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472908},
+doi = {10.1145/3452296.3472908},
+abstract = {With recent advances on cellular technologies (such as 5G) that push the boundary
+of cellular performance, cellular reliability has become a key concern of cellular
+technology adoption and deployment. However, this fundamental concern has never been
+addressed due to the challenges of measuring cellular reliability on mobile devices
+and the cost of conducting large-scale measurements. This paper closes the knowledge
+gap by presenting the first large-scale, in-depth study on cellular reliability with
+more than 70 million Android phones across 34 different hardware models. Our study
+identifies the critical factors that affect cellular reliability and clears up misleading
+intuitions indicated by common wisdom. In particular, our study pinpoints that software
+reliability defects are among the main root causes of cellular data connection failures.
+Our work provides actionable insights for improving cellular reliability at scale.
+More importantly, we have built on our insights to develop enhancements that effectively
+address cellular reliability issues with remarkable real-world impact---our optimizations
+on Android's cellular implementations have effectively reduced 40% cellular connection
+failures for 5G phones and 36% failure duration across all phones.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {597–609},
+numpages = {13},
+keywords = {cellular connection management, 5G network, mobile operating system, cellular network, reliability measurement},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472923,
+author = {Narayanan, Arvind and Zhang, Xumiao and Zhu, Ruiyang and Hassan, Ahmad and Jin, Shuowei and Zhu, Xiao and Zhang, Xiaoxuan and Rybkin, Denis and Yang, Zhengxuan and Mao, Zhuoqing Morley and Qian, Feng and Zhang, Zhi-Li},
+title = {A Variegated Look at 5G in the Wild: Performance, Power, and QoE Implications},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472923},
+doi = {10.1145/3452296.3472923},
+abstract = {Motivated by the rapid deployment of 5G, we carry out an in-depth measurement study
+of the performance, power consumption, and application quality-of-experience (QoE)
+of commercial 5G networks in the wild. We examine different 5G carriers, deployment
+schemes (Non-Standalone, NSA vs. Standalone, SA), radio bands (mmWave and sub 6-GHz),
+protocol configurations (_e.g._ Radio Resource Control state transitions), mobility
+patterns (stationary, walking, driving), client devices (_i.e._ User Equipment), and
+upper-layer applications (file download, video streaming, and web browsing). Our findings
+reveal key characteristics of commercial 5G in terms of throughput, latency, handover
+behaviors, radio state transitions, and radio power consumption under the above diverse
+scenarios, with detailed comparisons to 4G/LTE networks. Furthermore, our study provides
+key insights into how upper-layer applications should best utilize 5G by balancing
+the critical tradeoff between performance and energy consumption, as well as by taking
+into account the availability of both network and computation resources. We have released
+the datasets and tools of our study at https://github.com/SIGCOMM21-5G/artifact.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {610–625},
+numpages = {16},
+keywords = {latency, power characteristics, mmWave, 5G, energy efficiency, power model, network measurement, video streaming, dataset},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3473336,
+author = {Luo, Zhihong and Fu, Silvery and Theis, Mark and Hasan, Shaddi and Ratnasamy, Sylvia and Shenker, Scott},
+title = {Democratizing Cellular Access with CellBricks},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3473336},
+doi = {10.1145/3452296.3473336},
+abstract = {Markets in which competition thrives are good for both consumers and innovation but,
+unfortunately, competition is not thriving in the increasingly important cellular
+market. We propose CellBricks, a novel cellular architecture that lowers the barrier
+to entry for new operators by enabling users to consume access on-demand from any
+available cellular operator — small or large, trusted or untrusted. CellBricks achieves
+this by moving support for mobility and user management (authentication and billing)
+out of the network and into end hosts. These changes, we believe, bring valuable benefits
+beyond enabling competition: they lead to a cellular infrastructure that is simpler
+and more efficient.We design, build, and evaluate CellBricks, showing that its benefits
+come at little-to-no cost in performance, with application performance overhead between
+-1.6% to 3.1% of that achieved by current cellular infrastructure.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {626–640},
+numpages = {15},
+keywords = {democratization, cellular architecture, host-driven mobility},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472897,
+author = {Zhuang, Siyuan and Li, Zhuohan and Zhuo, Danyang and Wang, Stephanie and Liang, Eric and Nishihara, Robert and Moritz, Philipp and Stoica, Ion},
+title = {Hoplite: Efficient and Fault-Tolerant Collective Communication for Task-Based Distributed Systems},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472897},
+doi = {10.1145/3452296.3472897},
+abstract = {Task-based distributed frameworks (e.g., Ray, Dask, Hydro) have become increasingly
+popular for distributed applications that contain asynchronous and dynamic workloads,
+including asynchronous gradient descent, reinforcement learning, and model serving.
+As more data-intensive applications move to run on top of task-based systems, collective
+communication efficiency has become an important problem. Unfortunately, traditional
+collective communication libraries (e.g., MPI, Horovod, NCCL) are an ill fit, because
+they require the communication schedule to be known before runtime and they do not
+provide fault tolerance.We design and implement Hoplite, an efficient and fault-tolerant
+collective communication layer for task-based distributed systems. Our key technique
+is to compute data transfer schedules on the fly and execute the schedules efficiently
+through fine-grained pipelining. At the same time, when a task fails, the data transfer
+schedule adapts quickly to allow other tasks to keep making progress. We apply Hoplite
+to a popular task-based distributed framework, Ray. We show that Hoplite speeds up
+asynchronous stochastic gradient descent, reinforcement learning, and serving an ensemble
+of machine learning models that are difficult to execute efficiently with traditional
+collective communication by up to 7.8x, 3.9x, and 3.3x, respectively.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {641–656},
+numpages = {16},
+keywords = {collective communication, distributed systems},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472900,
+author = {Khani, Mehrdad and Ghobadi, Manya and Alizadeh, Mohammad and Zhu, Ziyi and Glick, Madeleine and Bergman, Keren and Vahdat, Amin and Klenk, Benjamin and Ebrahimi, Eiman},
+title = {SiP-ML: High-Bandwidth Optical Network Interconnects for Machine Learning Training},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472900},
+doi = {10.1145/3452296.3472900},
+abstract = {This paper proposes optical network interconnects as a key enabler for building high-bandwidth
+ML training clusters with strong scaling properties. Our design, called SiP-ML, accelerates
+the training time of popular DNN models using silicon photonics links capable of providing
+multiple terabits-per-second of bandwidth per GPU. SiP-ML partitions the training
+job across GPUs with hybrid data and model parallelism while ensuring the communication
+pattern can be supported efficiently on the network interconnect. We develop task
+partitioning and device placement methods that take the degree and reconfiguration
+latency of optical interconnects into account. Simulations using real DNN models show
+that, compared to the state-of-the-art electrical networks, our approach improves
+training time by 1.3--9.1x.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {657–675},
+numpages = {19},
+keywords = {silicon photonics, reconfigurable networks, optical networks, distributed machine learning},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472904,
+author = {Fei, Jiawei and Ho, Chen-Yu and Sahu, Atal N. and Canini, Marco and Sapio, Amedeo},
+title = {Efficient Sparse Collective Communication and Its Application to Accelerate Distributed Deep Learning},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472904},
+doi = {10.1145/3452296.3472904},
+abstract = {Efficient collective communication is crucial to parallel-computing applications such
+as distributed training of large-scale recommendation systems and natural language
+processing models. Existing collective communication libraries focus on optimizing
+operations for dense inputs, resulting in transmissions of many zeros when inputs
+are sparse. This counters current trends that see increasing data sparsity in large
+models.We propose OmniReduce, an efficient streaming aggregation system that exploits
+sparsity to maximize effective bandwidth use by sending only non-zero data blocks.
+We demonstrate that this idea is beneficial and accelerates distributed training by
+up to 8.2x. Even at 100 Gbps, OmniReduce delivers 1.4--2.9x better performance for
+network-bottlenecked DNNs.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {676–691},
+numpages = {16},
+keywords = {distributed training, deep learning},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472916,
+author = {Jyothi, Sangeetha Abdu},
+title = {Solar Superstorms: Planning for an Internet Apocalypse},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472916},
+doi = {10.1145/3452296.3472916},
+abstract = {Black swan events are hard-to-predict rare events that can significantly alter the
+course of our lives. The Internet has played a key role in helping us deal with the
+coronavirus pandemic, a recent black swan event. However, Internet researchers and
+operators are mostly blind to another black swan event that poses a direct threat
+to Internet infrastructure. In this paper, we investigate the impact of solar superstorms
+that can potentially cause large-scale Internet outages covering the entire globe
+and lasting several months. We discuss the challenges posed by such activity and currently
+available mitigation techniques. Using real-world datasets, we analyze the robustness
+of the current Internet infrastructure and show that submarine cables are at greater
+risk of failure compared to land cables. Moreover, the US has a higher risk for disconnection
+compared to Asia. Finally, we lay out steps for improving the Internet's resiliency.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {692–704},
+numpages = {13},
+keywords = {internet resilience, internet topology, solar storms},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472911,
+author = {Ding, Yi and Yang, Yu and Jiang, Wenchao and Liu, Yunhuai and He, Tian and Zhang, Desheng},
+title = {Nationwide Deployment and Operation of a Virtual Arrival Detection System in the Wild},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472911},
+doi = {10.1145/3452296.3472911},
+abstract = {We report a 30-month nationwide deployment and operation study of an indoor arrival
+detection system based on Bluetooth Low Energy called VALID in 364 Chinese cities.
+VALID is pilot-studied, deployed, and operated in the wild to infer real-time indoor
+arrival status of couriers, and improve their status reporting behavior based on the
+detection. During its full nationwide operation (2018/12- 2021/01), VALID consists
+of virtual devices at 3 million shops and restaurants, where 530,859 of them are in
+multi-story malls and markets to infer and influence 1 million couriers' behavior,
+and assist the scheduling of 3.9 billion orders for 186 million customers. Although
+indoor arrival detection is straightforward in controlled environments, the scale
+of our platform makes the cost prohibitively high. In this work, we explore to use
+merchants' smartphones under their consent as a virtual infrastructure to design,
+build, deploy, and operate VALID from in-lab conception to nationwide operation in
+three phases for 30 months. We consider metrics including system evolution, reliability,
+utility, participation, energy, privacy, monetary benefits, along with couriers' behavior
+changes. We share three lessons and their implications for similar wireless sensing
+or communication systems with large geospatial operations.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {705–717},
+numpages = {13},
+keywords = {nationwide deployment, arrival detection, Bluetooth sensing, operational system},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472930,
+author = {Lutu, Andra and Perino, Diego and Bagnulo, Marcelo and Bustamante, Fabi\'{a}n E.},
+title = {Insights from Operating an IP Exchange Provider},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472930},
+doi = {10.1145/3452296.3472930},
+abstract = {IP Exchange Providers (IPX-Ps) offer to their customers (e.g., mobile or IoT service
+providers) global data roaming and support for a variety of emerging services. They
+peer to other IPX-Ps and form the IPX network, which interconnects 800 MNOs worldwide
+offering their customers access to mobile services in any other country. Despite the
+importance of IPX-Ps, little is known about their operations and performance. In this
+paper, we shed light on these opaque providers by analyzing a large IPX-P with more
+than 100 PoPs in 40+ countries, with a particularly strong presence in America and
+Europe. Specifically, we characterize the traffic and performance of the main infrastructures
+of the IPX-P (i.e., 2-3-4G signaling and GTP tunneling), and provide implications
+for its operation, as well as for the IPX-P's customers. Our analysis is based on
+statistics we collected during two time periods (i.e., prior and during COVID-19 pandemic)
+and includes insights on the main service the platform supports (i.e., IoT and data
+roaming), traffic breakdown and geographical/temporal distribution, communication
+performance (e.g., tunnel setup time, RTTs). Our results constitute a step towards
+advancing the understanding of IPX-Ps at their core, and provide guidelines for their
+operations and customer satisfaction.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {718–730},
+numpages = {13},
+keywords = {international mobile roaming, IPX provider, performance analysis, mobile networks, measurements},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472903,
+author = {Sonchack, John and Loehr, Devon and Rexford, Jennifer and Walker, David},
+title = {Lucid: A Language for Control in the Data Plane},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472903},
+doi = {10.1145/3452296.3472903},
+abstract = {Programmable switch hardware makes it possible to move fine-grained control logic
+inside the network data plane, improving performance for a wide range of applications.
+However, applications with integrated control are inherently hard to write in existing
+data-plane programming languages such as P4. This paper presents Lucid, a language
+that raises the level of abstraction for putting control functionality in the data
+plane. Lucid introduces abstractions that make it easy to write sophisticated data-plane
+applications with interleaved packet-handling and control logic, specialized type
+and syntax systems that prevent programmer bugs related to data-plane state, and an
+open-sourced compiler that translates Lucid programs into P4 optimized for the Intel
+Tofino. These features make Lucid general and easy to use, as we demonstrate by writing
+a suite of ten different data-plane applications in Lucid. Working prototypes take
+well under an hour to write, even for a programmer without prior Tofino experience,
+have around 10x fewer lines of code compared to P4, and compile efficiently to real
+hardware. In a stateful firewall written in Lucid, we find that moving control from
+a switch's CPU to its data-plane processor using Lucid reduces the latency of performance-sensitive
+operations by over 300X.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {731–747},
+numpages = {17},
+keywords = {data plane programming abstractions, syntactic constraints, network control, ordered type-and-effect-system},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472925,
+author = {Tang, Alan and Kakarla, Siva Kesava Reddy and Beckett, Ryan and Zhai, Ennan and Brown, Matt and Millstein, Todd and Tamir, Yuval and Varghese, George},
+title = {Campion: Debugging Router Configuration Differences},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472925},
+doi = {10.1145/3452296.3472925},
+abstract = {We present a new approach for debugging two router configurations that are intended
+to be behaviorally equivalent. Existing router verification techniques cannot identify
+all differences or localize those differences to relevant configuration lines. Our
+approach addresses these limitations through a _modular_ analysis, which separately
+analyzes pairs of corresponding configuration components. It handles all router components
+that affect routing and forwarding, including configuration for BGP, OSPF, static
+routes, route maps and ACLs. Further, for many configuration components our modular
+approach enables simple _structural equivalence_ checks to be used without additional
+loss of precision versus modular semantic checks, aiding both efficiency and error
+localization. We implemented this approach in the tool Campion and applied it to debugging
+pairs of backup routers from different manufacturers and validating replacement of
+critical routers. Campion analyzed 30 proposed router replacements in a production
+cloud network and proactively detected four configuration bugs, including a route
+reflector bug that could have caused a severe outage. Campion also found multiple
+differences between backup routers from different vendors in a university network.
+These were undetected for three years, and depended on subtle semantic differences
+that the operators said they were "highly unlikely" to detect by "just eyeballing
+the configs."},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {748–761},
+numpages = {14},
+keywords = {modular reasoning, error localization, equivalence checking, network verification},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472938,
+author = {Ferreira, Tiago and Brewton, Harrison and D'Antoni, Loris and Silva, Alexandra},
+title = {Prognosis: Closed-Box Analysis of Network Protocol Implementations},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472938},
+doi = {10.1145/3452296.3472938},
+abstract = {We present Prognosis, a framework offering automated closed-box learning and analysis
+of models of network protocol implementations. Prognosis can learn models that vary
+in abstraction level from simple deterministic automata to models containing data
+operations, such as register updates, and can be used to unlock a variety of analysis
+techniques -- model checking temporal properties, computing differences between models
+of two implementations of the same protocol, or improving testing via model-based
+test generation. Prognosis is modular and easily adaptable to different protocols
+(e.g. TCP and QUIC) and their implementations. We use Prognosis to learn models of
+(parts of) three QUIC implementations -- Quiche (Cloudflare), Google QUIC, and Facebook
+mvfst -- and use these models to analyse the differences between the various implementations.
+Our analysis provides insights into different design choices and uncovers potential
+bugs. Concretely, we have found critical bugs in multiple QUIC implementations, which
+have been acknowledged by the developers.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {762–774},
+numpages = {13},
+keywords = {model learning, varied abstraction modelling, protocol state machines, bug finding, synthesis},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472941,
+author = {Xu, Xieyang and Beckett, Ryan and Jayaraman, Karthick and Mahajan, Ratul and Walker, David},
+title = {Test Coverage Metrics for the Network},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472941},
+doi = {10.1145/3452296.3472941},
+abstract = {Testing and verification have emerged as key tools in the battle to improve the reliability
+of networks and the services they provide. However, the success of even the best technology
+of this sort is limited by how effectively it is applied, and in today's enormously
+complex industrial networks, it is surprisingly easy to overlook particular interfaces,
+routes, or flows when creating a test suite. Moreover, network engineers, unlike their
+software counterparts, have no help to battle this problem—there are no metrics or
+systems to compute the quality of their test suites or the extent to which their networks
+have been verified.To address this gap, we develop a general framework to define and
+compute network coverage for stateless network data planes. It computes coverage for
+a range of network components (EG, interfaces, devices, paths) and supports many
+types of tests (e.g., concrete versus symbolic; local versus end-to-end; tests that
+check network state versus those that analyze behavior). Our framework is based on
+the observation that any network dataplane component can be decomposed into forwarding
+rules and all types of tests ultimately exercise these rules using one or more packets.We
+build a system called Yardstick based on this framework and deploy it in Microsoft
+Azure. Within the first month of its deployment inside one of the production networks,
+it uncovered several testing gaps and helped improve testing by covering 89% more
+forwarding rules and 17% more network interfaces.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {775–787},
+numpages = {13},
+keywords = {network verification, reliability, coverage metrics},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472901,
+author = {Mahimkar, Ajay and de Andrade, Carlos Eduardo and Sinha, Rakesh and Rana, Giritharan},
+title = {A Composition Framework for Change Management},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472901},
+doi = {10.1145/3452296.3472901},
+abstract = {Change management has been a long-standing challenge for network operations. The large
+scale and diversity of networks, their complex dependencies, and continuous evolution
+through technology and software updates combined with the risk of service impact create
+tremendous challenges to effectively manage changes. In this paper, we use data from
+a large service provider and experiences of their operations teams to highlight the
+need for quick and easy adaptation of change management capabilities and keep up with
+the continuous network changes. We propose a new framework CORNET (COmposition fRamework
+for chaNge managEmenT) with key ideas of modularization of changes into building blocks,
+flexible composition into change workflows, change plan optimization, change impact
+verification, and automated translation of high-level change management intent into
+low-level implementations and mathematical models. We demonstrate the effectiveness
+of CORNET using real-world data collected from 4G and 5G cellular networks and virtualized
+services such as VPN and SDWAN running in the cloud as well as experiments conducted
+on a testbed of virtualized network functions. We also share our operational experiences
+and lessons learned from successfully using CORNET within a large service provider
+network over the last three years.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {788–806},
+numpages = {19},
+keywords = {change plan optimization, impact verification, composition framework, network change management},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472906,
+author = {Mahimkar, Ajay and Sivakumar, Ashiwan and Ge, Zihui and Pathak, Shomik and Biswas, Karunasish},
+title = {Auric: Using Data-Driven Recommendation to Automatically Generate Cellular Configuration},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472906},
+doi = {10.1145/3452296.3472906},
+abstract = {Cellular service providers add carriers in the network in order to support the increasing
+demand in voice and data traffic and provide good quality of service to the users.
+Addition of new carriers requires the network operators to accurately configure their
+parameters for the desired behaviors. This is a challenging problem because of the
+large number of parameters related to various functions like user mobility, interference
+management and load balancing. Furthermore, the same parameters can have varying values
+across different locations to manage user and traffic behaviors as planned and respond
+appropriately to different signal propagation patterns and interference. Manual configuration
+is time-consuming, tedious and error-prone, which could result in poor quality of
+service. In this paper, we propose a new data-driven recommendation approach Auric
+to automatically and accurately generate configuration parameters for new carriers
+added in cellular networks. Our approach incorporates new algorithms based on collaborative
+filtering and geographical proximity to automatically determine similarity across
+existing carriers. We conduct a thorough evaluation using real-world LTE network data
+and observe a high accuracy (96%) across a large number of carriers and configuration
+parameters. We also share experiences from our deployment and use of Auric in production
+environments.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {807–820},
+numpages = {14},
+keywords = {carrier addition, collaborative filtering, recommendation algorithms, cellular network configuration},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472919,
+author = {Reininger, Michael and Arora, Arushi and Herwig, Stephen and Francino, Nicholas and Hurst, Jayson and Garman, Christina and Levin, Dave},
+title = {Bento: Safely Bringing Network Function Virtualization to Tor},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472919},
+doi = {10.1145/3452296.3472919},
+abstract = {Tor is a powerful and important tool for providing anonymity and censorship resistance
+to users around the world. Yet it is surprisingly difficult to deploy new services
+in Tor—it is largely relegated to proxies and hidden services—or to nimbly react to
+new forms of attack. Conversely, “non-anonymous” Internet services are thriving like
+never before because of recent advances in programmable networks, such as Network
+Function Virtualization (NFV) which provides programmable in-network middleboxes.This
+paper seeks to close this gap by introducing programmable middleboxes into the Tor
+network. In this architecture, users can install and run sophisticated “functions”
+on willing Tor routers. We demonstrate a wide range of functions that improve anonymity,
+resilience to attack, performance of hidden services, and more. We present the design
+and implementation of an architecture, Bento, that protects middlebox nodes from the
+functions they run—and protects the functions from the middleboxes they run on.We
+evaluate Bento by running it on the live Tor network. We show that, with just a few
+lines of Python, we can significantly extend the capabilities of Tor to meet users'
+anonymity needs and nimbly react to new threats. We will be making our code and data
+publicly available.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {821–835},
+numpages = {15},
+keywords = {Intel SGX, network function virtualization (NFV), Tor},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
+@inproceedings{10.1145/3452296.3472933,
+author = {Dai, Tianxiang and Jeitner, Philipp and Shulman, Haya and Waidner, Michael},
+title = {From IP to Transport and beyond: Cross-Layer Attacks against Applications},
+year = {2021},
+isbn = {9781450383837},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3452296.3472933},
+doi = {10.1145/3452296.3472933},
+abstract = {We perform the first analysis of methodologies for launching DNS cache poisoning:
+manipulation at the IP layer, hijack of the inter-domain routing and probing open
+ports via side channels. We evaluate these methodologies against DNS resolvers in
+the Internet and compare them with respect to effectiveness, applicability and stealth.
+Our study shows that DNS cache poisoning is a practical and pervasive threat.We then
+demonstrate cross-layer attacks that leverage DNS cache poisoning for attacking popular
+systems, ranging from security mechanisms, such as RPKI, to applications, such as
+VoIP. In addition to more traditional adversarial goals, most notably impersonation
+and Denial of Service, we show for the first time that DNS cache poisoning can even
+enable adversaries to bypass cryptographic defences: we demonstrate how DNS cache
+poisoning can facilitate BGP prefix hijacking of networks protected with RPKI even
+when all the other networks apply route origin validation to filter invalid BGP announcements.
+Our study shows that DNS plays a much more central role in the Internet security than
+previously assumed.We recommend mitigations for securing the applications and for
+preventing cache poisoning.},
+booktitle = {Proceedings of the 2021 ACM SIGCOMM 2021 Conference},
+pages = {836–849},
+numpages = {14},
+keywords = {BGP hijacking, fragmentation, DNS cache poisoning, side channels},
+location = {Virtual Event, USA},
+series = {SIGCOMM '21}
+}
+
